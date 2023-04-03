@@ -4,7 +4,7 @@ addpath('KoopmanIODMD');
 
 %% 1. Create or load open loop test data with WFSim
 
-% Inputs
+% Inputs for WFSim_demo
 R = 1e-6; % Weights on control input changed (J = sum(e'Qe + dU'Rdu)
 refstairs = 0; %refstairs: Set reference to stairs
 measured = 1; %measured (for Koopman model): Use measured values as feedback
@@ -24,12 +24,12 @@ ControlSetStr = 'sowfa_2turb_yaw_steps_Ct_comb';
 WFSim_demo(R,refstairs,measured,KoopmanStates,PolyLiftingFunction,controller,ControlSetStr,Vinf,vinfstr);
 fig = gcf; fig.Name = sprintf('OL_%s',ControlSetStr);
 
-%Run WFSimdemo for open loop yaw step
+%Run WFSimdemo for identification for effective wind speeds
 ControlSetStr = 'sowfa_2turb_alm_turbl_AllComb';
 WFSim_demo(R,refstairs,measured,KoopmanStates,PolyLiftingFunction,controller,ControlSetStr,Vinf,vinfstr);
 fig = gcf; fig.Name = sprintf('OL_%s',ControlSetStr);
 
-% Rzb
+% Run WFSimdemo for open loop yaw step
 ControlSetStr = 'sowfa_2turb_yaw_steps';
 WFSim_demo(R,refstairs,measured,KoopmanStates,PolyLiftingFunction,controller,ControlSetStr,Vinf,vinfstr);
 fig = gcf; fig.Name = sprintf('OL_%s',ControlSetStr);
