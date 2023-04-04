@@ -1,4 +1,4 @@
-clc; clear; close all; restoredefaultpath;
+clc; clear; close all;
 addpath('WFSimCode');
 addpath('KoopmanIODMD');
 
