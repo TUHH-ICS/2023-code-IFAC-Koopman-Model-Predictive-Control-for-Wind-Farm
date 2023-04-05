@@ -17,4 +17,3 @@ Third step: Evaluate quality of Koopman Sys ID in WFsim in closed loop with MPC
 
 Add YALMIP to run code
 
-test
