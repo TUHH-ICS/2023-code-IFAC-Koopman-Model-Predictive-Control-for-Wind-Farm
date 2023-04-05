@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7802990.svg)](https://doi.org/10.5281/zenodo.7802990)
 # 2023-code-IFAC-Koopman Model Predictive Control for Wind Farm Yield Optimization with Combined Thrust and Yaw Control
 
 ## General
@@ -22,7 +23,7 @@ WFSim is used both for data generation in open loop and for closed loop testing.
 
 The code in this repository was tested in the following environment:
 
-* *Windows 10 Enterprise 21H2
+* *Windows* 10 Enterprise 21H2
 * *Matlab* 2020a (Toolboxes used: Control System Toolbox and Optimization Toolbox)
 
 
