@@ -16,3 +16,5 @@ Third step: Evaluate quality of Koopman Sys ID in WFsim in closed loop with MPC
 - run code/WFSim_demo with wind speed used for data generation and controller = 2
 
 Add YALMIP to run code
+
+test
