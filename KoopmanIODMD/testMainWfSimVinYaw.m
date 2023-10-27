@@ -263,9 +263,9 @@ for idx = 1: length(noStates)
             [statesUr(:,idxK),stateNameUr,structPrev] = K_psi([Deterministic(:,idxK);Inputs(:,idxK)],poly,n,structPrev,yawmode); %koopmanstateextensionRT(Deterministic(:,idxK),poly,n,structPrev);
         end
         
-        windAtTurbine = [QQ_u1; QQ_v1];
-        statesUV = koopmanstateextensionWFSim(windAtTurbine,poly,n);
-        
+%         windAtTurbine = [QQ_u1; QQ_v1];
+%         statesUV = koopmanstateextensionWFSim(windAtTurbine,poly,n);
+%         
         stateNameUV = regexprep(stateNameUr,{'Ur1','Ur2','M'},{'u','v','Muv'});
         states = [statesUr]; %;statesUV];
         stateName = [stateNameUr]; %,';',stateNameUV];
@@ -284,8 +284,8 @@ for idx = 1: length(noStates)
             [statesvalidUr(:,idxK),st1,structPrev] = K_psi([Deterministic_val(:,idxK);Inputs_val(:,idxK)],poly,n,structPrev); %koopmanstateextensionRT(Deterministic(:,idxK),poly,n,structPrev);
         end
         
-        windAtTurbineVal = [valid.QQ_u1; valid.QQ_v1];
-        statesUV_val = koopmanstateextensionWFSim(windAtTurbineVal,poly,n);
+%         windAtTurbineVal = [valid.QQ_u1; valid.QQ_v1];
+%         statesUV_val = koopmanstateextensionWFSim(windAtTurbineVal,poly,n);
         statesvalid = [statesvalidUr];%;statesUV_val];
     else
         states = states_u;
@@ -320,8 +320,8 @@ for idx = 1: length(noStates)
     plotEDMDinputsEffWind(ysim_val,Inputs_val0,Deterministic_val0,FITje_val0,dirFig,Vin,n);
     
     % Sys id with ct1,ct2,V1 as inputs
-    statesVinf = [states;statesUV(1,:)];
-    statesvalidVinf = [statesvalid; statesUV_val(1,:)];
+    statesVinf = [states;utempT(t0:tident)'];
+    statesvalidVinf = [statesvalid; utempT(tval:end)'];
     stateNameVinf = [stateName,';V1'];
     [sys_red,FITje,Xd,Xd_p,xsim,FITje_val,xo,Koop,...
         ysim,InputsVinf,DeterministicVinf,ysim_val,Inputs_valOut,DeterministicVinf_val] = eDMD_RT_Vin(statesVinf,stateNameVinf,statesvalidVinf,poly,n,yawmode);

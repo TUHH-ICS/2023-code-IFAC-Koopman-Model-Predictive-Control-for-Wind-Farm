@@ -23,7 +23,7 @@ clc; clear; close all;
 yawmode = 1; %0 for ct (pitch/torque) control, 1 for additional yaw control
 % User input
 noStates = 6; %[6,12,12,14,16,18,24];
-useVal = 1; % use extra data for validation
+useVal = 0; % use extra data for validation
 percentTrain = .9;
 t0 = 240;
 

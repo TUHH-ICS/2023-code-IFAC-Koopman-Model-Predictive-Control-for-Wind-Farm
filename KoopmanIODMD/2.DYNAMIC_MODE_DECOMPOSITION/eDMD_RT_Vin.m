@@ -35,7 +35,8 @@ Deterministic_val = statesvalid(1:ny, (t0+1) : tendVal);
 Koop.G = psi_xk_1 * psi_xk_1'; % Update G (GT
 Koop.A = psi_xk_1 * psi_xk';   % Update A (At)
 Koop.K = pinv(Koop.G) * Koop.A;% Update Koopman operator
-K = Koop.K'; Ky = K(1:ny,:);
+K = Koop.K'; 
+Ky = K(1:ny,:);
 
 approxA = K(1:nx,1:nx); % system matrix
 approxB = K(1:nx,nx+1:end);
